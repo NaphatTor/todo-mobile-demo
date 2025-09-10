@@ -38,7 +38,7 @@ A simple and lightweight mobile app built with React Native (Expo) to organize t
 4. Open the app:
    ```bash
    - Expo Go on iOS/Android
-   - Web (press w in the terminal) or Open [http://localhost:8081](http://localhost:8081) 
+   - Web (press w in the terminal) or Open http://localhost:8081)
    - Android Emulator / iOS Simulator
    ```
 
