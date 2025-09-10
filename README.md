@@ -1,4 +1,4 @@
-# 📋 Todo List App
+# Todo List App
 
 A simple and lightweight mobile app built with React Native (Expo) to organize tasks and boost daily productivity.
 
