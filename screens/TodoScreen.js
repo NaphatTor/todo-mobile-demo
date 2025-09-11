@@ -78,6 +78,24 @@ export default function TodoScreen() {
       return;
     }
 
+    //android / ios
+    Alert.alert("Clear completed?", "Remove all done tasks.", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Clear",
+        style: "destructive",
+        onPress: () => setTodos(prev => prev.filter(t => !t.done)),
+      },
+    ]);
+
+    if (Platform.OS === "web") {
+      //web
+      if (window.confirm("Clear completed? Remove all done tasks.")) {
+        setTodos(prev => prev.filter(t => !t.done));
+      }
+      return;
+    }
+
     //iOS/Android
     Alert.alert("Clear completed?", "Remove all done tasks.", [
       { text: "Cancel", style: "cancel" },
