@@ -67,11 +67,25 @@ export default function TodoScreen() {
   const deleteTodo = (id) => setTodos((prev) => prev.filter((t) => t.id !== id));
 
   const clearDone = () => {
-    const hasDone = todos.some((t) => t.done);
+    const hasDone = todos.some(t => t.done);
     if (!hasDone) return;
+
+    if (Platform.OS === "web") {
+      //web
+      if (window.confirm("Clear completed? Remove all done tasks.")) {
+        setTodos(prev => prev.filter(t => !t.done));
+      }
+      return;
+    }
+
+    //iOS/Android
     Alert.alert("Clear completed?", "Remove all done tasks.", [
       { text: "Cancel", style: "cancel" },
-      { text: "Clear", style: "destructive", onPress: () => setTodos(todos.filter((t) => !t.done)) },
+      {
+        text: "Clear",
+        style: "destructive",
+        onPress: () => setTodos(prev => prev.filter(t => !t.done)),
+      },
     ]);
   };
 
@@ -173,7 +187,7 @@ export default function TodoScreen() {
           blurOnSubmit={false}
           autoCapitalize="none"
           autoCorrect={false}
-          onSubmitEditing={addTodo} // มือถือ
+          //onSubmitEditing={addTodo} // มือถือ
           onKeyPress={(e) => {
             if (e.nativeEvent.key === "Enter") addTodo(); // Web
           }}

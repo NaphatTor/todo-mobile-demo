@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "rn-todo-mini",
-    "slug": "rn-todo-mini",
+    "name": "TodoList",
+    "slug": "todo-mobile-demo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "rntodomini",
+    "scheme": "todo-mobile-demo",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -20,6 +20,7 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
+      "name": "TodoList",
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
